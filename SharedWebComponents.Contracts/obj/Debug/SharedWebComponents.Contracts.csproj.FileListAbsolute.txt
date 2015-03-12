@@ -1,0 +1,4 @@
+C:\dev\SharedWebComponentsMef\SharedWebComponents.Contracts\bin\Debug\SharedWebComponents.Contracts.dll
+C:\dev\SharedWebComponentsMef\SharedWebComponents.Contracts\bin\Debug\SharedWebComponents.Contracts.pdb
+C:\dev\SharedWebComponentsMef\SharedWebComponents.Contracts\obj\Debug\SharedWebComponents.Contracts.dll
+C:\dev\SharedWebComponentsMef\SharedWebComponents.Contracts\obj\Debug\SharedWebComponents.Contracts.pdb
