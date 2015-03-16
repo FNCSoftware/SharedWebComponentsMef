@@ -55,7 +55,7 @@ namespace SharedWebComponents.Infrastructure.EmbeddedResource {
                     return resource;
                 }
             }
-            if (TryGetByName(pathInfo.GetFileName().ToLower(), out result)) {
+            if (TryGetByName(pathInfo.GetFileName().ToLowerInvariant(), out result)) {
                 return result;
             }
 

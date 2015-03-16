@@ -28,3 +28,8 @@ C:\dev\SharedWebComponentsMef\Client2.Page\bin\System.Web.Razor.xml
 C:\dev\SharedWebComponentsMef\Client2.Page\bin\System.Web.WebPages.xml
 C:\dev\SharedWebComponentsMef\Client2.Page\bin\System.Web.WebPages.Deployment.xml
 C:\dev\SharedWebComponentsMef\Client2.Page\bin\System.Web.WebPages.Razor.xml
+C:\dev\SharedWebComponentsMef\Client2.Page\bin\Antlr3.Runtime.dll
+C:\dev\SharedWebComponentsMef\Client2.Page\bin\System.Web.Optimization.dll
+C:\dev\SharedWebComponentsMef\Client2.Page\bin\WebGrease.dll
+C:\dev\SharedWebComponentsMef\Client2.Page\bin\Antlr3.Runtime.pdb
+C:\dev\SharedWebComponentsMef\Client2.Page\bin\System.Web.Optimization.xml

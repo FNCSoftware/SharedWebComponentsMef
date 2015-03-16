@@ -5,7 +5,7 @@ using SharedWebComponents.Extensions;
 namespace SharedWebComponents.Infrastructure.EmbeddedResource {
     internal class VirtualFileRazorViewHelper {
         //todo: need to build this from web config dynamically
-        static readonly string WebviewpagePrependTemplate = @"@inherits System.Web.Mvc.WebViewPage{0}{1}@using System.Web.Mvc{2}@using System.Web.WebPages{3}@using System.Web.Mvc.Html{4}";
+        static readonly string WebviewpagePrependTemplate = @"@inherits System.Web.Mvc.WebViewPage{0}{1}@using System.Web.Mvc{2}@using System.Web.WebPages{3}@using System.Web.Mvc.Html{4}@using System.Web.Optimization{5}";
 
         public static string GetViewString(Stream stream) {
             string result;
@@ -22,7 +22,7 @@ namespace SharedWebComponents.Infrastructure.EmbeddedResource {
         }
 
         static string GetInheritsAndModelString(string modelString) {
-            var result = string.Format(WebviewpagePrependTemplate, modelString, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine);
+            var result = string.Format(WebviewpagePrependTemplate, modelString, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine);
             return result;
         }
 

@@ -32,3 +32,8 @@ C:\dev\SharedWebComponentsMef\SharedWebComponents\obj\Debug\SharedWebComponents.
 C:\dev\SharedWebComponentsMef\SharedWebComponents\obj\Debug\SharedWebComponents.csprojResolveAssemblyReference.cache
 C:\dev\SharedWebComponentsMef\SharedWebComponents\obj\Debug\SharedWebComponents.dll
 C:\dev\SharedWebComponentsMef\SharedWebComponents\obj\Debug\SharedWebComponents.pdb
+C:\dev\SharedWebComponentsMef\SharedWebComponents\bin\Antlr3.Runtime.dll
+C:\dev\SharedWebComponentsMef\SharedWebComponents\bin\System.Web.Optimization.dll
+C:\dev\SharedWebComponentsMef\SharedWebComponents\bin\WebGrease.dll
+C:\dev\SharedWebComponentsMef\SharedWebComponents\bin\Antlr3.Runtime.pdb
+C:\dev\SharedWebComponentsMef\SharedWebComponents\bin\System.Web.Optimization.xml

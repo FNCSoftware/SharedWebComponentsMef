@@ -1,28 +1,28 @@
 ﻿using System;
 using System.Collections;
-using System.Web;
 using System.Web.Caching;
 using System.Web.Hosting;
 
 namespace SharedWebComponents.Infrastructure.EmbeddedResource {
     internal class EmbeddedResourceVirtualPathProvider : VirtualPathProvider {
         readonly IEmbeddedResourceNameResolver _embeddedResourceNameResolver;
-        readonly string _embeddedResourceIdentifier;
 
-        public EmbeddedResourceVirtualPathProvider(IEmbeddedResourceNameResolver embeddedResourceNameResolver, string embeddedResourceIdentifier) {
+        public EmbeddedResourceVirtualPathProvider(IEmbeddedResourceNameResolver embeddedResourceNameResolver) {
             _embeddedResourceNameResolver = embeddedResourceNameResolver;
-            _embeddedResourceIdentifier = embeddedResourceIdentifier;
         }
 
         bool IsEmbeddedResourcePath(string virtualPath) {
-            var appRelativePath = VirtualPathUtility.ToAppRelative(virtualPath);
+            //if path is serving a file... need to fail resolve and pass to httpHandler
+            if (virtualPath.EndsWith(".js", StringComparison.InvariantCultureIgnoreCase) || virtualPath.EndsWith(".css", StringComparison.InvariantCultureIgnoreCase)) {
+                return false;
+            }
             AssemblyNameResolution result;
             var pathInfo = new EmbeddedResourcePathInfo(virtualPath);
-            return appRelativePath.Contains(_embeddedResourceIdentifier) && _embeddedResourceNameResolver.TryResolve(pathInfo, out result);
+            return _embeddedResourceNameResolver.TryResolve(pathInfo, out result);
         }
 
         public override bool FileExists(string virtualPath) {
-            return base.FileExists(virtualPath) || IsEmbeddedResourcePath(virtualPath);
+            return IsEmbeddedResourcePath(virtualPath) || base.FileExists(virtualPath);
         }
 
         public override VirtualFile GetFile(string virtualPath) {

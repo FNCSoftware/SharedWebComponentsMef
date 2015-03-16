@@ -6,7 +6,7 @@ A prototype that demonstrates what a plugin-based architecture using MEF looks l
 - Accepts client dll’s by a naming convention (currently using clientName.anything) where clientName will be used for routing (ie clientName/controller/action/id)
 - Uses MEF conventions to extract implementations of IController (built-in MVC controller contract) and IUrlResolver (custom implementation that will be used as bridge between main app and client implementations)
 - Has a controller factory that prefers controllers from main project to client controllers
-- Can extract views (haven’t done other resources yet) correctly from client dll’s
+- Can extract resources correctly from client dll’s
 - Can extract resources from the correct dll given that multiple dll’s are present and they contain resources with the same name
 
 # To set up a new client: #

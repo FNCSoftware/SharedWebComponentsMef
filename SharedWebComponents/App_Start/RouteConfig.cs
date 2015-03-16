@@ -16,8 +16,8 @@ namespace SharedWebComponents
             routes.MapRoute(
                 name: "Default",
                 url: "{client}/{controller}/{action}/{id}",
-                defaults: new { client = "Client1", controller = "Home", action = "Index", id = UrlParameter.Optional },
-                constraints: new { client = new IsValidClient() }
+                defaults: new { client = "Client1", controller = "Home", action = "Index", id = UrlParameter.Optional }
+                //constraints: new { client = new IsValidClient() }
             );
         }
     }
