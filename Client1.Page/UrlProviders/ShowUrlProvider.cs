@@ -1,7 +1,7 @@
 ﻿using SharedWebComponents.Contracts;
 
-namespace Client1.Page.Parts {
-    public class Client1UrlProvider : IUrlProvider {
+namespace Client1.Page.UrlProviders {
+    public class ShowUrlProvider : IUrlProvider {
         public string GetUrl() {
             return "/Client1/Test/";
         }

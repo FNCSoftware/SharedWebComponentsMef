@@ -1,6 +1,6 @@
-﻿using System.Web.Mvc;
-using SharedWebComponents.Contracts;
-using SharedWebComponents.Infrastructure.Mef;
+﻿using System;
+using System.Web.Mvc;
+using SharedWebComponents.Infrastructure.Utility;
 
 namespace SharedWebComponents.Controllers {
     public class HomeController : Controller {
@@ -9,14 +9,21 @@ namespace SharedWebComponents.Controllers {
         }
 
         public ActionResult Show(string client) {
-            var destinationUrl = GetUrlProvider(client).GetUrl();
+            var urlProvider = UrlProviderFetcher.Fetch(client, "Show");
+            if (urlProvider == null) {
+                throw new Exception("Required: Destination must be provided for route: Show");
+            }
+            var destinationUrl = urlProvider.GetUrl();
             return Redirect(destinationUrl);
         }
 
-        static IUrlProvider GetUrlProvider(string client = null) {
-            var urlProviderName = string.IsNullOrWhiteSpace(client) ? null : client + "UrlProvider";
-            var result = MefBootstrapper.GetInstance<IUrlProvider>(client, urlProviderName);
-            return result;
+        public ActionResult Override(string client) {
+            var urlProvider = UrlProviderFetcher.Fetch(client, "Override");
+            if (urlProvider == null) {
+                return View();
+            }
+            var destinationUrl = urlProvider.GetUrl();
+            return Redirect(destinationUrl);
         }
     }
 }

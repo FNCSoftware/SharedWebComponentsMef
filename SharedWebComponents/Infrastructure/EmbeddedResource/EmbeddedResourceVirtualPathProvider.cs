@@ -13,6 +13,7 @@ namespace SharedWebComponents.Infrastructure.EmbeddedResource {
 
         bool IsEmbeddedResourcePath(string virtualPath) {
             //if path is serving a file... need to fail resolve and pass to httpHandler
+            //todo: figure out all extensions that should go here (fonts, images, etc)
             if (virtualPath.EndsWith(".js", StringComparison.InvariantCultureIgnoreCase) || virtualPath.EndsWith(".css", StringComparison.InvariantCultureIgnoreCase)) {
                 return false;
             }

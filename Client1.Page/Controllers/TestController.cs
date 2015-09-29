@@ -5,5 +5,9 @@ namespace Client1.Page.Controllers {
         public ActionResult Index() {
             return View();
         }
+
+        public ActionResult Override() {
+            return View();
+        }
     }
 }

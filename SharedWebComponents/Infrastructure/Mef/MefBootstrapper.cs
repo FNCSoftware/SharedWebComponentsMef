@@ -38,7 +38,7 @@ namespace SharedWebComponents.Infrastructure.Mef {
                 type = container.GetExport<T>();
             } else {
                 var exports = container.GetExports<T>();
-                type = exports.First(x => x.GetType().Name == typeName && (assemblyHint == null || (x.GetType().AssemblyQualifiedName != null && x.GetType().AssemblyQualifiedName.Contains(assemblyHint))));
+                type = exports.FirstOrDefault(x => x.GetType().Name == typeName && (assemblyHint == null || (x.GetType().AssemblyQualifiedName != null && x.GetType().AssemblyQualifiedName.Contains(assemblyHint))));
             }
 
             return type;

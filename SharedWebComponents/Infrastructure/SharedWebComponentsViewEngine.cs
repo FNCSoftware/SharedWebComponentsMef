@@ -64,8 +64,8 @@ namespace SharedWebComponents.Infrastructure {
 
         static string[] AppendLocationFormats(IEnumerable<string> newLocations, IEnumerable<string> defaultLocations) {
             var viewLocations = new List<string>();
-            viewLocations.AddRange(newLocations);
             viewLocations.AddRange(defaultLocations);
+            viewLocations.AddRange(newLocations);
             return viewLocations.ToArray();
         }
 
